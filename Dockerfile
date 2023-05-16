@@ -20,6 +20,9 @@ EXPOSE 80
 COPY webdav.conf /etc/nginx/conf.d/default.conf
 RUN rm /etc/nginx/sites-enabled/*
 
+RUN ln -sf /dev/stdout /var/log/nginx/webdav_access.log \
+    && ln -sf /dev/stderr /var/log/nginx/webdav_error.log
+
 COPY entrypoint.sh /
 RUN chmod +x entrypoint.sh
 
