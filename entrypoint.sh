@@ -9,9 +9,9 @@ else
 	sed -i 's%auth_basic "Restricted";% %g' /etc/nginx/conf.d/default.conf
 	sed -i 's%auth_basic_user_file htpasswd;% %g' /etc/nginx/conf.d/default.conf
 fi
-mediaowner=$(ls -ld /media | awk '{print $3}')
-echo "Current /media owner is $mediaowner"
-if [ "$mediaowner" != "www-data" ]
-then
-    chown -R www-data:www-data /media
-fi
+#mediaowner=$(ls -ld /media | awk '{print $3}')
+#echo "Current /media owner is $mediaowner"
+#if [ "$mediaowner" != "www-data" ]
+#then
+#    chown -R www-data:www-data /media
+#fi
